@@ -4,9 +4,7 @@ import numpy as np
 thres = 0.55 # Threshold to detect object
 nms_threshold = 0.2
 cap = cv2.VideoCapture(0)
-# cap.set(3,1280)
-# cap.set(4,720)
-# cap.set(10,150)
+
 
 classNames= []
 classFile = 'labels.txt'
@@ -29,11 +27,10 @@ while True:
     bbox = list(bbox)
     confs = list(np.array(confs).reshape(1,-1)[0])
     confs = list(map(float,confs))
-    #print(type(confs[0]))
-    #print(confs)
+   
 
     indices = cv2.dnn.NMSBoxes(bbox,confs,thres,nms_threshold)
-    #print(indices)
+    
 
     for i in indices:
         i = i[0]
