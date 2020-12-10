@@ -48,5 +48,5 @@ def webcam_detection():
     cv2.waitKey(1)
 
 # image_detection()
-webcam_detection()
+# webcam_detection()
 
